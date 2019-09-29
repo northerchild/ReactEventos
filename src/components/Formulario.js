@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {CategoriasConsumer} from '../context/CategoriaContex';
 class Formulario extends Component {
     state = {
         nombre: '',
@@ -31,6 +31,15 @@ class Formulario extends Component {
                                         name="categoria"
                                         onChange={this.obtenerDatosEvento}
                                     >
+                                        <CategoriasConsumer>
+                                            {(value)=>{
+                                                return(
+                                                    value.categorias.map(categoria =>(
+                                                        <option key={categoria.id} value={categoria.id} data-uk-form-select>{categoria.name_localized}</option>
+                                                    ))
+                                                )
+                                            }}
+                                        </CategoriasConsumer>
                                         <option value="">--Selecciona Categoría --</option>
                                     </select>
                                 </div>
