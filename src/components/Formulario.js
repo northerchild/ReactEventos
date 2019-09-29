@@ -5,6 +5,15 @@ class Formulario extends Component {
         nombre: '',
         categirua: ''
     }
+
+    // si el usuario agrega un evento o categoria
+
+    obtenerDatosEvento = e =>{
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+
     render() {
         return (
             <form  >
