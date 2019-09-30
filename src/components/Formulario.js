@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import {CategoriasConsumer} from '../context/CategoriaContex';
 import {EventosConsumer} from '../context/EventoContext';
 class Formulario extends Component {
-    state = {
+    state = { 
         nombre: '',
-        categirua: ''
+        categoria: ''
     }
 
     // si el usuario agrega un evento o categoria
 
-    obtenerDatosEvento = e =>{
+    obtenerDatosEvento = e => {
         this.setState({
             [e.target.name] : e.target.value
         })
     }
 
-    render() {
-        return (
+    render() { 
+        return ( 
             <EventosConsumer>
                 {(value) => {
       
@@ -75,7 +75,7 @@ class Formulario extends Component {
                 )
             }}
             </EventosConsumer>
-        );
+         );
     }
 }
 
